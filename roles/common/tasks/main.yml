@@ -17,7 +17,7 @@
     file:
       path: /tmp/test2
       state: touch
-      mode: 755
+      mode: 640
   
   - name: copy hostname file
     template:
