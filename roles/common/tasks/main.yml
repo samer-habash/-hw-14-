@@ -1,0 +1,25 @@
+---
+  - name: install vim pakcage
+    apt:
+      name: vim
+      state: latest
+  - name: install zip pakcage
+    apt:
+      name: zip
+      state: latest
+
+  - name: create file on /tmp/ for all servers
+    shell: echo 'Hello world!' > /tmp/test1
+    args:
+      executable: /bin/bash
+
+  - name: touch /tmp/test2
+    file:
+      path: /tmp/test2
+      state: touch
+      mode: 755
+  
+  - name: copy hostname file
+    template:
+        src: hostname.j2
+        dest: /tmp/test2
